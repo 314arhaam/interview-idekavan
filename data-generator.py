@@ -30,4 +30,4 @@ with open('schema.txt', 'w') as schema_file:
         random_id = random.randint(1, len(products))
         random_date = start_day + datetime.timedelta(days = random.randint(0, n_days))
         random_date = str(random_date).split()[0]
-        schema_file.write(f'    ({i+1}, {random_id}, "{random_date}", {random.randint(1, 50)}){sep}\n')
+        schema_file.write(f'    ({i+1}, {random_id}, \'{random_date}\', {random.randint(1, 50)}){sep}\n')
