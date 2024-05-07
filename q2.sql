@@ -1,5 +1,5 @@
--- drop table products;
--- drop table orders;
+drop table if exists products;
+drop table if exists orders;
 
 create table products(
     id int PRIMARY KEY,
