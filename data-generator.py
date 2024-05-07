@@ -21,6 +21,7 @@ n_data = 200
 
 
 with open('schema.txt', 'w') as schema_file:
+    schema_file.write('-- POSTGRESQL | ORDERS SCHEMA')
     schema_file.write('''
 create table orders(
     id int PRIMARY KEY,
