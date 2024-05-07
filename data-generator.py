@@ -5,7 +5,7 @@ import random
 products = [
     "PS5",
     "BMW 328i",
-    "Intel Core i9",
+    "AMD Ryzen 9 7950X3D",
     "Potato"
 ]
 
