@@ -1,19 +1,22 @@
 import datetime
 import random
 
+### INPUT AND TUNABLE PARAMETERS
+# tunable parameters: how many data rows do we want?
+n_data = 200
+# number of products in 'products' table
+n_products = 4
 # start date for generating random order dates
 start_day = datetime.datetime(year = 2023,
                               month = 10,
                               day = 6)
 
+### 
 # random dates are generated as 'start_date + r_days'
 # first we should calculate how many days are between start date and today
 # to find the range of which 'r_days' lies within.
 today = datetime.datetime.now()
 n_days = (today - start_day).days - 1
-
-# tunable parameters: how many data rows do we want?
-n_data = 200
 
 # open file and write the schema
 # NOTE: Pandas could be used for this task, but current algorithm is available
@@ -39,7 +42,9 @@ create table orders(
         if i == n_data - 1:
             sep = '; '
         # id, product_id, order_date, num
-        random_id = random.randint(1, len(products))
+        random_id = random.randint(1, n_products)
+        # the r_days
         random_date = start_day + datetime.timedelta(days = random.randint(0, n_days))
-        random_date = str(random_date).split()[0]
+        random_date = str(random_date).split()[0] # we just need date not time
+        # write each line
         orders_schema_file.write(f'    ({i+1}, {random_id}, \'{random_date}\', {random.randint(1, 50)}){sep}\n')
