@@ -224,11 +224,11 @@ VALUES
     (199, 2, '2023-12-15', 3),
     (200, 1, '2024-03-14', 32);
 
-select
-       products.name as Product_Name,
-       sum(num) as Total_Ordered,
-       sum(products.price * num) as Total_Sold
-from
-orders LEFT JOIN products on orders.product_id = products.id
-where order_date >= (NOW() - interval '1 month') -- MYSQL: WHERE order_date >= DATEADD(month, -1, GETDATE()) AND order_date < GETDATE()
-group by name;
+SELECT
+       products.name AS Product_Name,
+       sum(num) AS Total_Ordered,
+       sum(products.price * num) AS Total_Sold
+FROM
+orders LEFT JOIN products ON orders.product_id = products.id
+WHERE order_date >= (NOW() - INTERVAL '1 month') -- MYSQL: WHERE order_date >= DATEADD(month, -1, GETDATE()) AND order_date < GETDATE()
+GROUP BY name;
