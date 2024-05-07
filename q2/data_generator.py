@@ -40,6 +40,6 @@ create table orders(
             # the r_days
             r_days = datetime.timedelta(days = random.randint(0, n_days))
             random_date = start_day + r_days
-            random_date = str(random_date).split()[0] # we just need date not time
+            random_date = str(random_date).split()[0] # just need date not time
             # write each line
             orders_schema_file.write(f'    ({i+1}, {random_id}, \'{random_date}\', {random.randint(1, 50)}){sep}\n')
