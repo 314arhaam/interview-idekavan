@@ -19,13 +19,15 @@ def dataGen(start_day: datetime.datetime,
         orders_schema_file.write('-- POSTGRESQL | ORDERS SCHEMA')
         # define table
         orders_schema_file.write('''
-    create table orders(
-        id int PRIMARY KEY,
-        product_id int,
-        order_date date,
-        num int
-        );
-        ''')
+drop table if exists orders;
+                                 
+create table orders(
+    id int PRIMARY KEY,
+    product_id int,
+    order_date date,
+    num int
+    );
+    ''')
         # insert values to the table
         orders_schema_file.write('insert into orders (id, product_id, order_date, num)\nVALUES\n')
         sep = ', '

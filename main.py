@@ -11,4 +11,4 @@ if __name__ == '__main__':
     start_day = datetime.datetime(year = 2023,
                                   month = 10,
                                   day = 6)
-    dataGen()
+    dataGen(start_day, n_data, n_products)
