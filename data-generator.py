@@ -21,6 +21,13 @@ n_data = 200
 
 
 with open('schema.txt', 'w') as schema_file:
+    schema_file.write('''
+    create table orders(
+    id int PRIMARY KEY,
+    product_id int,
+    order_date date,
+    num int
+    );''')
     schema_file.write('insert into orders (id, product_id, order_date, num)\nVALUES\n')
     sep = ', '
     for i in range(n_data):
