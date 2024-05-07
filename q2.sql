@@ -11,8 +11,8 @@ insert into products (id, name, price, category)
 values
        (1, 'PS5',                   500,    'gaming'),
        (2, 'BMW 328i',              45000,  'vehicles'),
-       (3, 'AMD Ryzen 9 7950X3D',   1500,   'Tech'),
-       (4, 'Potato',                2,      'Vegetables');
+       (3, 'AMD Ryzen 9 7950X3D',   1500,   'tech'),
+       (4, 'Potato',                2,      'vegetables');
 
 create table orders(
     id int PRIMARY KEY,
