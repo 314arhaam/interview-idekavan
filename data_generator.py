@@ -16,7 +16,7 @@ def dataGen(start_day: datetime.datetime,
     # AVAILABLITY MATTERS!
     with open('schema_orders.txt', 'w') as orders_schema_file: # can be *.sql
         # schema header
-        orders_schema_file.write('-- POSTGRESQL | ORDERS SCHEMA')
+        orders_schema_file.write('-- POSTGRESQL | ORDERS SCHEMA\n')
         # define table
         orders_schema_file.write('''
 drop table if exists orders;
